@@ -1,0 +1,13 @@
+<h2 class="title">Attachment: <%= @photo.photo_file_name%></h2>
+<br/><br/>
+
+<%= link_to "View All Attachments", attachments_path%>
+
+<div class="photo">
+    <%= attachment.file_file_name%>
+</div>
+
+<%= link_to "Download this Attachment", download_attachment_path(@attachment)%>
+
+<%= link_to "Delete", attachment_path(@attachment), :method => :delete, :data => {:confirm => "Are you sure you want to permanently delete this attachment?"}%>
+

@@ -1,0 +1,11 @@
+<% url, method = @category.new_record? ? [categories_path, :post] :[category_path(@category), :put] %>
+
+<div style="padding:10px; background-color:lightyellow; border: 2px solid yellow">
+  <%= form_for @category, :url=> url, :method => method do |f|%>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+
+    <%= f.submit "Save Category" %>
+    <%= button_to "Cancel", :url => categories_path %>
+  <% end %>
+</div>

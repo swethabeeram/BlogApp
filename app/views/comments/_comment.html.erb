@@ -1,0 +1,19 @@
+<% if @post.comments.empty?%>
+  No Comments Found!
+<% else %>
+  <% @post.comments.each do |comment|%>
+    <div style="background-color:lightgreen; padding:10px; margin:10px; border: 2px solid green;">
+      <%= simple_format(comment.comment) %>
+      <br/>
+
+      <small>Published on: <%= format_date(comment.created_at)%></small>
+      <br/>
+
+      <small>Published by: <%= comment.user.name%></small>
+      <br/>
+      <%if logged_in? && (comment.user == current_user || @post.user==current_user)%>
+      <%= button_to "Delete this Comment", post_comment_path(@post,comment), :data => {:confirm => "Are you sure"}, :method => :delete %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

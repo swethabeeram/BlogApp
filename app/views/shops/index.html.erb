@@ -1,0 +1,37 @@
+<h1>Listing shops</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Business type</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shops.each do |shop| %>
+  <tr>
+    <td><%= shop.title %></td>
+    <td><%= shop.description %></td>
+    <td><%= shop.business_type %></td>
+    <td><%= shop.address %></td>
+    <td><%= shop.city %></td>
+    <td><%= shop.state %></td>
+    <td><%= shop.country %></td>
+    <td><%= shop.phone %></td>
+    <td><%= link_to 'Show', shop %></td>
+    <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
+    <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shop', new_shop_path %>
