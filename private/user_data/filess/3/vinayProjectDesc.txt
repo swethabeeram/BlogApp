@@ -1,0 +1,12 @@
+1. Create a management table with username, password, hashed_password, email, designation, subject ==> username is PK
+2. Create a user table with username, email, password, hashed_password, designation, collegename, phone, status ==> User has many doubts, User can give many feedbacks
+3. Create a doubts table with s.no, username, doubt, subject ==> Doubt belongs to a user
+4. Create a feedback table with s.no, username, feedback ==> Feedback belongs to a user
+5. create a presentation table with filename, filepath, subject ==> filename is PK
+6. create a quiz table with sno, qno, subject, status, question, answer, optiona, optionb, optionc ==> sno is PK
+7. create a result table with sno, username, qno, answer, date, time, subject ==> username is PK and Results are submitted by many users
+
+`s.no` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(45) NOT NULL,
+  `doubt` varchar(45) DEFAULT NULL,
+  `subject`

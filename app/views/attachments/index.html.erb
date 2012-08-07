@@ -5,7 +5,7 @@
 <% unless @attachments.empty? %>
   <ul class="photos_list">
     <% @attachments.each do |attachment| %>
-    <li><%= attachment.file_file_name%>
+    <li><%= attachment.file_file_name%> <br/>
       <%= link_to "Download this attachment", download_attachment_path(attachment)%>
 
   <%= link_to "Delete this file", attachment_path(attachment), :method => :delete, :data => {:confirm => "Are you sure you want to permanently delete this attachment?"}%>

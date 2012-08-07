@@ -35,15 +35,7 @@ class AttachmentsController < ApplicationController
     @attachment = Attachment.new
   end  
 
-  def create1
-    @attachment = Attachment.new(params[:attachment])
-    @attachment.user_id = current_user.id
-    if @attachment.save
-      flash[:notice] = "Attachment has been saved successfully!"
-      redirect_to attachments_path
-    else
-      render :action => :new
-    end  
+  def show
   end
 
 
@@ -51,7 +43,7 @@ class AttachmentsController < ApplicationController
     @attachment = Attachment.new(params[:attachment])
     @attachment.user_id = current_user.id
     if @attachment.save
-      redirect_to attachment_path(@attachment)
+      redirect_to attachments_path
     else
       render :action => :new
     end  
